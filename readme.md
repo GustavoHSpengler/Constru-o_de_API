@@ -112,3 +112,45 @@ $ git status
 ```
 $ git add .
 ```
+
+5. Depois analise se realmente adicionou os arquivos.
+
+```
+$ git status
+```
+
+6. Salvar projeto e escrever comentário sobre o processo realizado
+
+```
+$ git commit -m 'estrutura do projeto'
+```
+
+### Só é preciso criar um repositorio no git hub para armazena-lo
+
+7. De volta ao terminal, executar o comando para definir a branch main
+
+```
+$ git branch -M main
+```
+
+* Informar o repositório que queremos enviar os arquivos
+
+8. Colar a URL do seu repositório copiada
+
+```
+$ git remote add origin https://github.com/GustavoHSpengler/Constru-o_de_API.git
+```
+
+9. Enviar os arquivos para o gitHub
+
+```
+$ git push -u origin main
+```
+
+### Atualize a pagína no gitHub e verifique se os arquivos foram enviados.
+
+10. Com o projeto no servidor remoto podemos remover os arquivos na nossa máquina
+
+```
+$ cd ..
+```
