@@ -1,156 +1,175 @@
-# Passo a passo da API
+# Passo a passo da API, 2° parte
 
-1. Criar a pasta.
-
-```
-$ mkdir API_NODEJS_2BM
-```
-
-2. Acessar a pasta.
+### Clone o seu antigo repositório no seu computador.
+- Abrir o gitBash em um local do computador;
+- Digitar o comando 'git clone' junto com a URL do seu repositório;
 
 ```
-$ cd API_NODEJS_2BM
+$ git clone https://github.com/GustavoHSpengler/Constru-o_de_API.git
 ```
 
-3. Criar um readme.md para documentação do seu trabalho.
-
+### Acesse a pasta
+- Digitar o comando 'cd' e o nome do seu repositório;
+- cd (change directory): acessar outra pasta;
 ```
-$ touch readme.md
-```
-
-4. Iniciar o gerenciador de pacotes Node.
-
-```
-$ npm init -y
+$ cd Constru-o_de_API
 ```
 
-5. Acessar o VS Code
+### Reinstalar os pacotes de aplicação 
+
+```
+$ npm i
+```
+- Este comando irá recriar a pasta node_modules no projeto;
+
+### Criar arquivo .env na raiz do projeto
+- Este arquivo é utilizada para armazenar as variáveis que serão reutilizadas na aplicação;
+- Com o comando nano, podemos criar e editar um arquivo pelo terminal;
+- Ctrl + o: Salvar o arquivo;
+- Enter: Confirmar;
+- Ctrl + x: Fechar o arquivo;
+
+```
+$ nano .env
+```
+
+### Acesse o VS Code
 
 ```
 $ code .
 ```
 
-6. Instalar os pacotes Node
+### Digitar no arquivo .env
 
 ```
-$ npm i express nodemon dotenv
+PORT = 3008
 ```
+- Variável que contém a porta que o servidor estará rodando;
+- Esta arquivo .env não enviamos pro gitHub, pois contém informações sensíveis do sistema;
 
-7. Criar o arquivo .gitignore
+### Adicionar arquivo .env no .gitignore
 
 ```
 $ nano .gitignore
 ```
-* Use para ignorar o arquivo node_modules
-
-8. Criar a estrutura de arquivos e pastas
 
 ```
-$ mkdir src
+.env
 ```
 
-9. Criar arquivo dentro do src.
+### Criar arquivo de exemplo para para as variáveis necessárias da aplicação
+- Como não enviamos o arquivo .env para o gitHub, precisamos criar o exemplo das variáveis necessárias da aplicação;
+- Este arquivo conterá apenas as variáveis, sem os valores correspondentes;
 
 ```
-$ touch src/app.js
+$ nano .env.example
 ```
 
-* Esse vai ser importante para a configuração da API.
+- Escreva "PORT =";
 
+### Abrir o arquivo app.js e digitar o código
+- Importar o pacote express (servidor);
 ```
-$ touch src/server.js
-```
-
-* Esse é o arquivo responsável em receber as configurações da aplicação e rodar a API
-
-10. Criar pastas dentro do src.
-
-```
-$ mkdir src/config
+const express = require('express');
 ```
 
-* Pasta para gerenciar a conexão com o banco de dados
+- Importar o pacote dotenv, gerenciador de variáveis de ambiente;
 
 ```
-$ mkdir src/controllers
+const dotenv = require('dotenv').config();
 ```
 
-* Pasta para gerenciar as requisições das rotas e conexão com banco de dados
+- Instanciar o express na variável app;
 
 ```
-$ mkdir src/routes
+const app = express();
 ```
 
-* Pasta para gerenciar as rotas da API
-
-## Enviar a estrutura do projeto 
-
-1 Inicializar o gerenciador de arquivos .git
+- Setar a porta do servidor a partir do arquivo .env;
+- O operador condicional '||' significa 'OU', caso não tenha a variável PORT, será utilizado o valor - 3333';
 
 ```
-$ git init
+app.set('port', process.env.PORT || 3333); 
 ```
 
-2 Informar seu nome e email.
-
+- Exportar as configurações na variável app;
 ```
-$ git config --global user.name "FIRST_NAME"
-```
-
-```
-$ git config --global user.email "EMAIL@EXAMPLE.COM"
+module.exports = app;
 ```
 
-3. Verificar arquivos que serão enviados ao gitHub
+### Abrir o arquivo server.js e digitar os códigos
+
+- Importar o arquivo app;
+```
+const app = require('./app');
+```
+
+- Importar a porta do servidor;
 
 ```
-$ git status
+const port = app.get('port');
 ```
 
-4. Adicionar todos arquivos ao versionamento
+- Testar API com a função listen;
+- 1º parâmetro: passamos a porta do servidor;
+- 2º parâmetro: arrow function para retornar um console informando a porta que está rodando o servidor;
+
+```
+app.listen(port, () => {
+    console.log(`Running on port ${ port }!`);
+});
+```
+
+## Depois de configurar os pacotes e o teste do servidor, vamos criar o comando para executar
+
+### Substituir o comando 'test' pelo comando 'start' na linha 7
+
+```
+"start":"nodemon src/server.js"
+```
+
+### Rodar o comando no termial com gitBash
+
+```
+$ npm run start
+```
+
+### Atualizar projeto no gitHub
+
+- Adicionar todos arquivos ao versionamento;
 
 ```
 $ git add .
 ```
 
-5. Depois analise se realmente adicionou os arquivos.
+- Salvar projeto e escrever comentário sobre o processo realizado;
 
 ```
-$ git status
+$ git commit -m 'configuração do projeto'
 ```
 
-6. Salvar projeto e escrever comentário sobre o processo realizado
+- Enviar os arquivos atualizados para o gitHub;
 
 ```
-$ git commit -m 'estrutura do projeto'
+$ git push
 ```
 
-### Só é preciso criar um repositorio no git hub para armazena-lo
+### Atualize a página no gitHub e verifique se os arquivos foram atualizados
 
-7. De volta ao terminal, executar o comando para definir a branch main
-
-```
-$ git branch -M main
-```
-
-* Informar o repositório que queremos enviar os arquivos
-
-8. Colar a URL do seu repositório copiada
-
-```
-$ git remote add origin https://github.com/GustavoHSpengler/Constru-o_de_API.git
-```
-
-9. Enviar os arquivos para o gitHub
-
-```
-$ git push -u origin main
-```
-
-### Atualize a pagína no gitHub e verifique se os arquivos foram enviados.
-
-10. Com o projeto no servidor remoto podemos remover os arquivos na nossa máquina
+- Com o projeto no servidor remoto podemos remover os arquivos na nossa máquina;
 
 ```
 $ cd ..
 ```
+
+- Comando para acessar uma pasta anterior;
+- Fechar o VSCode com o projeto aberto;
+
+```
+$ rm -rf projetoBackend
+```
+
+- rm (remove): comando utilizado para apagar arquivo
+- r (recursive): apaga pastas e subpastas de forma recursiva
+- f (force): não pergunta confirmações
+- projetoBackend: nome da pasta que contem os arquivos da aplicação 
