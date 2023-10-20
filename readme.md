@@ -173,6 +173,7 @@ $ rm -rf projetoBackend
 - -f (force): não pergunta confirmações
 - projetoBackend: nome da pasta que contem os arquivos da aplicação
 
+--- 
 
 # Passo a passo da API, 2° parte
 
@@ -181,14 +182,14 @@ $ rm -rf projetoBackend
 - Digitar o comando 'git clone' junto com a URL do seu repositório;
 
 ```
-$ git clone https://github.com/GustavoHSpengler/Constru-o_de_API.git
+$ git clone COLAR_URL
 ```
 
 ### Acesse a pasta
 - Digitar o comando 'cd' e o nome do seu repositório;
 - cd (change directory): acessar outra pasta;
 ```
-$ cd Constru-o_de_API
+$ cd NOME_REPOSITORIO
 ```
 
 ### Reinstalar os pacotes de aplicação 
@@ -349,3 +350,22 @@ $ rm -rf projetoBackend
 - r (recursive): apaga pastas e subpastas de forma recursiva
 - f (force): não pergunta confirmações
 - projetoBackend: nome da pasta que contem os arquivos da aplicação 
+
+--- 
+
+# Passo a passo da API, 3° parte
+
+### Clonar o repositorio na sua máquina
+```
+$ git clone COLAR_URL
+```
+
+### Acessar a pasta
+- Digitar o comando 'cd' e o nome do seu repositório
+- cd (change directory): acessar outra pasta
+```
+$ cd NOME_REPOSITORIO
+```
+
+### Reinstalar os pacotes 
+
