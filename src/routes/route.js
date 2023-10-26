@@ -1,17 +1,18 @@
 const { Router } = require('express');
 const router = Router();
+const { 
+    listarDados,
+    gravarDados,
+    atualizarDados,
+    deletarDados
+ } = require('../controllers/crudController');
 
-router.get('/listar', (request, response) => {
-    response.send('Método GET: listar informações');
-});
-router.post('/cadastrar', (request, response) => {
-    response.send('Método POST: salvar informações');
-});
-router.put('/user/:id', (request, response) => {
-    response.send('Método PUT: atualizar informações');
-});
-router.delete('/user/:id', (request, response) => {
-    response.send('Método DELETE: remover informações');
-});
+router.get('/listar', listarDados);
+
+router.post('/gravar', gravarDados);
+
+router.put('/atualizar/:id', atualizarDados);
+
+router.delete('/deletar/:id', deletarDados);
 
 module.exports = router;
