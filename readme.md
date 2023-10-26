@@ -346,10 +346,10 @@ $ cd ..
 $ rm -rf projetoBackend
 ```
 
-- rm (remove): comando utilizado para apagar arquivo
-- r (recursive): apaga pastas e subpastas de forma recursiva
-- f (force): não pergunta confirmações
-- projetoBackend: nome da pasta que contem os arquivos da aplicação 
+- rm (remove): comando utilizado para apagar arquivo;
+- r (recursive): apaga pastas e subpastas de forma recursiva;
+- f (force): não pergunta confirmações;
+- projetoBackend: nome da pasta que contem os arquivos da aplicação; 
 
 --- 
 
@@ -398,19 +398,19 @@ module.exports = router;
 ```
 
 ### Abrir o arquivo app.js e adicionar o código
-- Precisamos importar o arquivo de rotas nas configurações da API
+- Precisamos importar o arquivo de rotas nas configurações da API;
 ```
 const router = require('./routes/rotas');
 ```
-- Habilitar as rotas na aplicação
-- Esta linha deve inserida depois da criação da variável app
+- Habilitar as rotas na aplicação;
+- Esta linha deve inserida depois da criação da variável app;
 
 ```
 app.use('/api', router);
 ```
 
 ### Atualizar projeto no gitHub
-- Adicionar todos arquivos ao versionamento
+- Adicionar todos arquivos ao versionamento;
 ```
 $ git add .
 ```
@@ -425,23 +425,98 @@ $ git commit -m 'rotas do projeto'
 $ git push
 ```
 ### Atualize a página no gitHub e verifique se os arquivos foram atualizados
-- Com o projeto no servidor remoto podemos remover os arquivos na nossa máquina
+- Com o projeto no servidor remoto podemos remover os arquivos na nossa máquina;
 ```
 $ cd ..
 ```
 
-- Comando para acessar uma pasta anterior
-- Fechar o VSCode com o projeto aberto
+- Comando para acessar uma pasta anterior;
+- Fechar o VSCode com o projeto aberto;
 
 ```
-$
-rm -rf projetoBackend
+$ rm -rf projetoBackend
 ```
 
-- rm (remove): comando utilizado para apagar arquivo
-- -r (recursive): apaga pastas e subpastas de forma recursiva
-- -f (force): não pergunta confirmações
-- projetoBackend: nome da pasta que contem os arquivos da aplicação
+- rm (remove): comando utilizado para apagar arquivo;
+- -r (recursive): apaga pastas e subpastas de forma recursiva;
+- -f (force): não pergunta confirmações;
+- projetoBackend: nome da pasta que contem os arquivos da aplicação;
 
 ---
 # Passo a passo, 4º parte
+
+- Copiar url do repositório no gitHub;
+- Clonar repositório no computador com o gitBash;
+- Abrir o projeto no VSCode;
+- Aprender a utilizar o insomnia;
+---
+
+## Clonar o repositório na sua máquina
+- Abrir o gitBash em um local do computador;
+- Digitar o comando 'git clone' junto com a URL do seu repositório;
+```
+$ git clone URL_REPOSITORIO
+```
+
+## Acessar pasta
+- Digitar o comando 'cd' e o nome do seu repositório;
+- cd (change directory): acessar outra pasta;
+```
+$ cd NOME_REPOSITORIO
+```
+
+---
+
+## Insomnia
+Quando você está criando sua API, vai precisar testar as rotas que serão criadas no projeto, é possível utilizar o próprio browser para testar, mas ele só pode enviar requisições do tipo get, e os dados retornados não são apresentados já formatados. Para usar as outras requisições como post, put e delete, será necessário usar softwares de terceiros, e nesse caso, é o insomnia. Ele é um programa open source feito em javascript. O programa é um testador de rotas para APIs, como todos os outros (por exemplo o postman), você coloca a url da API e o caminho da rota.
+
+## Agora abra o insomnia no seu computador
+- Agora precisamos dar um nome para esse projeto, a imagem a seguir sugere o nome 'Construc-o_de_API';
+- Defina o nome do projeto e clique no botão 'Create';
+<img src="./imagens/insomnia_parte1.jpg">
+
+- Com o projeto criado, precisamos criar uma coleção de requisições para esse projeto;
+- Clique no botão 'New Collection;'
+- Defina o nome da coleção e clique no botão 'Create';
+<img src="./imagens/insomnia_parte2.jpg">
+
+- Agora estamos dentro do projeto 'Construc-o_de_API / Teste das rotas';
+- Vamos criar a primeira requisição para a API clicando no botão 'New HTTP Request', indicado na tela a seguir;
+- Será criar uma nova requisição no método GET
+- Todas as requisições desta coleção ficaram listadas neste quadro da esquerda conforme a imagem;
+- Podemos alterar o nome da requisição clicando no ícone de seta para baixo e selecionando a opção 'Rename';
+- É importante renomear as requisições para deixarmos personalizadas e com a descrição de responsabilidade da requisição;
+<img src="./imagens/insomnia_parte3.jpg">
+
+- Podemos alterar o método da requisição clicando no íconde de seta para baixo;
+<img src="./imagens/insomnia_parte4.jpg">
+
+- Agora só precisamos descrever a url da nossa API com a porta que definimos (http://localhost:3000) e as rotas (/api/listar) que criamos no arquivo rotas.js do passo 3;
+<img src="./imagens/insomnia_parte5.jpg">
+
+---
+
+## Importante
+Antes de clicar no botão 'Send' para executar a ação da rota, execute o comando 'npm start' no seu projeto para rodar a API e verifique se o retorno estará conforme a imagem a seguir, ou seja, rodando na porta definida para o servidor.
+
+```
+$ npm run start
+```
+
+- Após validar que a API esta rodando, executa a ação da rota clicando no botão 'Send';
+- O Insomnia deverá retornar a mensagem descrita no método GET do nosso arquivo de rotas;
+<hr>
+
+- ### Metódo post
+<img src="./imagens/insomnia_parte6.jpg">
+
+- ### Metódo put
+<img src="./imagens/insomnia_parte7.jpg">
+
+- ### Metódo get
+<img src="./imagens/insomnia_parte8.jpg">
+
+- ### Metódo delete
+<img src="./imagens/insomnia_parte9.jpg">
+
+- ### Após tudo salve seu progresso no seu repositório.
