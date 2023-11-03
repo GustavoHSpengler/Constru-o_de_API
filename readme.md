@@ -625,3 +625,9 @@ URL do repositório com:
 - Arquivo de rotas com os métodos [GET, POST, PUT, DELETE]
 - Arquivo com as funções de controller
 - Imagem de cada método testado no Insomnia dentro do arquivo readme, conforme exibido na conclusão do passo 4
+
+Conclusão, como é para ficar no insomnia:
+<img src="./imagens/insomnia_metodo-get.jpg">
+<img src="./imagens/insomnia_metodo-post.jpg">
+<img src="./imagens/insomnia_metodo-put.jpg">
+<img src="./imagens/insomnia_metodo-delete.jpg">
