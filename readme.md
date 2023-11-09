@@ -547,19 +547,19 @@ $ npm run start
 - Digitar o comando 'git clone' junto com a URL do seu repositório
 
 ```
-git clone URL_REPOSITORIO
+$ git clone URL_REPOSITORIO
 ```
 
 ## Acessar pasta
 - Digitar o comando 'cd' e o nome do seu repositório
 - cd (change directory): acessar outra pasta
 ```
-cd NOME_REPOSITORIO
+$ cd NOME_REPOSITORIO
 ```
 
 ## Reinstalar os pacotes da aplicação
 ```
-npm i
+$ npm i
 ```
 - Este comando irá recriar a pasta node_modules no projeto
 
@@ -567,12 +567,12 @@ npm i
 - Definir as variáveis no arquivo .env a partir das chaves definidas no arquivo .env.example
 - Criar pasta 'controllers' dentro da pasta 'src'
 ```
-mkdir scr/controllers
+$ mkdir scr/controllers
 ```
 
 ## Criar arquivo 'crudController.js' na pasta 'controllers'
 ```
-touch src/controllers/crudController.js
+$ touch src/controllers/crudController.js
 ```
 
 ## Colar os códigos no arquivo crudController.js
@@ -636,6 +636,12 @@ URL do repositório com:
 - Arquivo de rotas com os métodos [GET, POST, PUT, DELETE]
 - Arquivo com as funções de controller
 - Imagem de cada método testado no Insomnia dentro do arquivo readme, conforme exibido na conclusão do passo 4
+
+### Teste o insonmia
+```
+$ npm run start
+```
+- Se deu errado, veja se os nomes dos arquivos estão certos.
 
 Conclusão, como é para ficar no insomnia:
 <img src="./imagens/insomnia_metodo-get.jpg">
