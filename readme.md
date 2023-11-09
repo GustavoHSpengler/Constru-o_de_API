@@ -124,6 +124,17 @@ $ git config --global user.email "EMAIL@EXAMPLE.COM"
 $ git status
 ```
 
+Caso apareça o node-modules faça isso aqui:
+```
+$ ls -a
+```
+```
+$ rm -rf .git
+```
+```
+$ ls -a
+```
+
 ### Adicionar todos arquivos ao versionamento
 ```
 $ git add .
