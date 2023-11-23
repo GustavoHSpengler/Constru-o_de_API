@@ -732,3 +732,5 @@ DB_PASSWORD =
 DB_DATABASE =
 DB_PORT =
 ```
+
+- Atualize a sua API
