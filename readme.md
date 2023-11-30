@@ -60,7 +60,7 @@ $ nano .gitignore
 
 ### Adicionar no arquivo .gitignore o nome da pasta criada após a instalação dos pacotes 
 ```
-$ node_modules
+node_modules
 ```
 
 - Esta pasta node_modules não precisamos enviar pro gitHub, pois pode ser recriada com o comando 'npm install';
@@ -124,7 +124,7 @@ $ git config --global user.email "EMAIL@EXAMPLE.COM"
 $ git status
 ```
 
-Caso apareça o node-modules faça isso aqui:
+Caso não apareça o node_modules faça isso aqui:
 ```
 $ ls -a
 ```
